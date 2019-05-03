@@ -19,5 +19,8 @@ object Ejercicio2 extends App {
 
   println(abecedario)
 
+  //agregar a cada letra un numero
+
+
 
 }
