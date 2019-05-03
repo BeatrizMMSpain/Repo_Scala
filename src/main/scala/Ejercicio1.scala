@@ -19,8 +19,6 @@ object Ejercicio1 extends App {
     */
   case class Libro (titulo : String, numpaginas : Int){}
 
-  override def main(args: Array[String]): Unit = {
-    //Se genera una lista de libros con los datos indicados en el enunciado
     var listaLibro:List[Libro]= List(new Libro("libro1",150),new Libro("libro2", 600), new Libro("libro3", 500))
 
 
@@ -39,5 +37,4 @@ object Ejercicio1 extends App {
     println("Los libros que tienen más de 200 páginas son:")
     listaLibro2.withFilter(l1 => l1.numpaginas >= 200).foreach( libro => println(libro))
 
-  }
 }
