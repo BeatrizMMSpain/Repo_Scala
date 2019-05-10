@@ -16,10 +16,18 @@ object Ejercicio2 extends App {
   val abecedario4 : List[String] = abecedario3 ::: lista5
   val abecedario5 : List[String] = abecedario4 ::: lista6
   val abecedario  : List[String] = abecedario5 ::: lista7
-
+  println("Impresión de la lista:")
   println(abecedario)
 
-  //agregar a cada letra un numero
+  //pasar abecedario List a Maps agregando un valor para cada elemento de la lista
+
+  //Crear la variable map vacía y mutable
+  var mapAbecedario = scala.collection.mutable.Map[Int, String]()
+
+  //Rellenamos la variable Map con los elementos de la lista
+  for (x : Int <- 0 until abecedario.length - 1 ){ mapAbecedario += (x -> abecedario(x)) }
+  println("Impresión de la variables Map:")
+  println(mapAbecedario)
 
 
 
