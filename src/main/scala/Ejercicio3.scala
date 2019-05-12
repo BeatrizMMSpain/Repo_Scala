@@ -1,4 +1,4 @@
-import Ejercicio1.Libro
+import Ejercicio1.Libro, Ejercicio1.listaLibro
 import scala.io.StdIn
 
 
@@ -13,15 +13,22 @@ object Ejercicio3 extends App {
     * un menú para elegir entre las dos opciones
     */
 
-  class Libreria ( map: Map[Libro -> Libro]){
-    def añadirLibro: Unit ={
+  //class Libreria ( map: Map[Libro , Libro]){
+  class Libreria ( libro: Libro){
+    //var listaLibro  = listaLibro
+    println(listaLibro)
 
+    def añadirLibro( libro: Libro) ={
+      println("Estoy en el metodo con " + libro.titulo)
+      for (x <- 0 until listaLibro.length){
+        if (libro.titulo == listaLibro(x)){println("Ya existe este libro.")}
+      }
     }
 
-    def mostrarInformación{
+    def mostrarInformacion{
     }
   }
-  }
+
 
   override def main(args: Array[String]): Unit = {
     //Opciones a elegir por el usuario
@@ -43,6 +50,14 @@ object Ejercicio3 extends App {
 
       operacion match {
         case AddLibro =>
+          println("Introduce el Libro:")
+          val libroUsuario : String = StdIn.readLine()
+          println("Introduce el número de páginas:")
+          val numPagUsuario : Int = StdIn.readInt()
+          var otherbook = new Libro(libroUsuario,numPagUsuario)
+          println(otherbook)
+          new Libreria(otherbook).añadirLibro(otherbook)
+
 
         case ShowInfo =>
 
@@ -52,4 +67,5 @@ object Ejercicio3 extends App {
           salir = true
       }
     }
+  }
 }
