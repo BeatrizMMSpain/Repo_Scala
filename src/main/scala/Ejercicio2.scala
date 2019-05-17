@@ -10,12 +10,7 @@ object Ejercicio2 extends App {
   val lista7 : List[String] = List("X","Y","Z")
 
   //Se agrupan todas las listas en una
-  val abecedario1 : List[String] = lista1 ::: lista2
-  val abecedario2 : List[String] = abecedario1 ::: lista3
-  val abecedario3 : List[String] = abecedario2 ::: lista4
-  val abecedario4 : List[String] = abecedario3 ::: lista5
-  val abecedario5 : List[String] = abecedario4 ::: lista6
-  val abecedario  : List[String] = abecedario5 ::: lista7
+  val abecedario = List.concat(lista1,lista2,lista3,lista4,lista5,lista6,lista7)
   println("Impresión de la lista:")
   println(abecedario)
 
